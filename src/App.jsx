@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { atoms, molecules, organisms } from './demos/index.jsx';
-import { Layout, Sidebar, SidebarTitle, SidebarItem, Preview, PreviewHeader, PreviewBox, Logo } from './App.styles.js';
+import { Layout, Sidebar, SidebarTitle, SidebarItem, Preview, PreviewHeader, PreviewBox, Logo, IsolateButton } from './App.styles.js';
 
 const groups = [
   { label: 'Atoms', items: atoms },
@@ -10,6 +10,7 @@ const groups = [
 
 export default function App() {
   const [selected, setSelected] = useState({ group: 'Atoms', name: atoms[0].name });
+  const [isIsolated, setIsIsolated] = useState(false);
 
   const currentItem = groups
     .flatMap(g => g.items)
@@ -17,6 +18,7 @@ export default function App() {
 
   return (
     <Layout>
+      {!isIsolated && (
       <Sidebar>
         <Logo>Comic Relief</Logo>
         {groups.map(group => (
@@ -34,8 +36,14 @@ export default function App() {
           </div>
         ))}
       </Sidebar>
+      )}
       <Preview>
-        <PreviewHeader>{selected.name}</PreviewHeader>
+        <PreviewHeader>
+          <h2>{selected.name}</h2>
+          <IsolateButton $active={isIsolated} onClick={() => setIsIsolated(s => !s)}>
+            {isIsolated ? 'Show Sidebar' : 'Isolate'}
+          </IsolateButton>
+        </PreviewHeader>
         <PreviewBox>
           {currentItem?.demo}
         </PreviewBox>

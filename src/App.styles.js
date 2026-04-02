@@ -50,12 +50,19 @@ export const Preview = styled.main`
   background: ${color('grey_light')};
 `;
 
-export const PreviewHeader = styled.h2`
+export const PreviewHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 0 1.5rem;
-  font-size: 1.25rem;
-  color: ${color('grey_5')};
   border-bottom: 1px solid ${color('grey_medium')};
   padding-bottom: 0.75rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: ${color('grey_5')};
+  }
 `;
 
 export const PreviewBox = styled.div`
@@ -66,6 +73,9 @@ export const PreviewBox = styled.div`
 `;
 
 export const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem 1rem 0.75rem;
   font-size: 0.8rem;
   font-weight: 700;
@@ -73,4 +83,21 @@ export const Logo = styled.div`
   letter-spacing: 0.05em;
   border-bottom: 1px solid ${color('grey_dark')};
   margin-bottom: 0.5rem;
+`;
+
+export const IsolateButton = styled.button`
+  background: none;
+  border: 1px solid ${color('grey_medium')};
+  border-radius: 4px;
+  color: ${({ $active }) => ($active ? color('red') : color('grey_5'))};
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+
+  &:hover {
+    border-color: ${color('red')};
+    color: ${color('red')};
+  }
 `;
