@@ -1,4 +1,4 @@
-Comic Relief React Component Library 2026
+Comic Relief React Component Library 26
 --------------
 
 [![GitHub Actions](https://github.com/comicrelief/component-library/actions/workflows/main.yml/badge.svg)](https://github.com/comicrelief/component-library/actions)
