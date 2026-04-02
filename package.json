@@ -1,0 +1,57 @@
+{
+  "name": "component-library-2026",
+  "version": "1.0.0",
+  "description": "Comic Relief React component library built with Vite and styled-components",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview",
+    "lint": "eslint src"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "styled-components": ">=6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.13",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@splidejs/react-splide": "^0.7.12",
+    "axios": "^1.7.7",
+    "lazysizes": "^5.3.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "prop-types": "^15.8.1",
+    "pure-react-carousel": "^1.30.1",
+    "react-canvas-confetti": "^2.0.7",
+    "react-currency-format": "^1.1.0",
+    "react-hook-form": "^7.53.2",
+    "react-live": "^4.1.8",
+    "react-modal": "^3.16.1",
+    "react-range-slider-input": "^3.0.7",
+    "react-responsive": "^10.0.0",
+    "react-spinners": "^0.14.1",
+    "react-uid": "^2.3.3",
+    "youtube-player": "^5.6.0",
+    "yup": "^1.4.0"
+  }
+}
