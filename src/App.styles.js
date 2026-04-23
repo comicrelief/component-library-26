@@ -89,7 +89,7 @@ export const IsolateButton = styled.button`
   background: none;
   border: 1px solid ${color('grey_medium')};
   border-radius: 4px;
-  color: ${({ $active }) => ($active ? color('red') : color('grey_5'))};
+  color: ${color('black')};
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 700;
