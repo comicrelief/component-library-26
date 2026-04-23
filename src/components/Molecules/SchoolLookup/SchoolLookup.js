@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
-
 import Typeahead from '../Typeahead/Typeahead';
 
 const optionFetcher = async query => {
-  const response = await axios.get(
-    'https://lookups.sls.comicrelief.com/schools/lookup',
-    {
-      params: { query },
-      timeout: 3000
-    }
-  );
-  return response.data.data.schools;
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 3000);
+  try {
+    const url = new URL('https://lookups.sls.comicrelief.com/schools/lookup');
+    url.searchParams.set('query', query);
+    const response = await fetch(url, { signal: controller.signal });
+    const json = await response.json();
+    return json.data.schools;
+  } finally {
+    clearTimeout(timeoutId);
+  }
 };
 
 const optionParser = school => `${school.name}, ${school.post_code}`;

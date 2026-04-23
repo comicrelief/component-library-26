@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
-
 import Lookup from '../Lookup/Lookup';
 
 const schoolFetcher = async query => {
@@ -14,11 +12,17 @@ const schoolFetcher = async query => {
   }
 
   try {
-    const res = await axios.get(
-      'https://lookups.sls.comicrelief.com/schools/lookup',
-      { timeout: 10000, params: { query } }
-    );
-    return res.data.data.schools;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    try {
+      const url = new URL('https://lookups.sls.comicrelief.com/schools/lookup');
+      url.searchParams.set('query', query);
+      const res = await fetch(url, { signal: controller.signal });
+      const json = await res.json();
+      return json.data.schools;
+    } finally {
+      clearTimeout(timeoutId);
+    }
   } catch (error) {
     // if (typeof Sentry !== 'undefined') {
     //   Sentry.captureException(error);
