@@ -12,17 +12,17 @@ CR-CL has a dependency of Styled-components.
 
 #### Install the package
 ```
-$ yarn add @comicrelief/component-library-2026
+$ yarn add @comicrelief/component-library-26
 ```
 
 #### Wrap your app with the ThemeProvider and crTheme
 ```
-import { ThemeProvider, crTheme } from '@comicrelief/component-library-2026';
+import { ThemeProvider, crTheme } from '@comicrelief/component-library-26';
 ```
 
 #### Import components
 ```
-import { HeroBanner } from '@comicrelief/component-library-2026';
+import { HeroBanner } from '@comicrelief/component-library-26';
 ```
 
 ### Develop
