@@ -1,19 +1,7 @@
-// @ts-check
-const { defineConfig, devices } = require('@playwright/test');
+import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-require('dotenv').config();
-
-/**
- * @see https://playwright.dev/docs/test-configuration
- */
-module.exports = defineConfig({
+export default defineConfig({
   testDir: './playwright',
-  /* Fail the build on CI if you accidentally left test
-  .only in the source code. */
   forbidOnly: !!process.env.CI,
   retries: 2,
   workers: 2,
@@ -26,19 +14,17 @@ module.exports = defineConfig({
     ['html', { open: 'never' }]
   ],
   use: {
+    baseURL: 'http://localhost:4173',
     actionTimeout: 0,
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry'
   },
 
-  /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
         viewport: {
-          // Match our widest nav:
           width: 1300,
           height: 1000
         }
@@ -46,4 +32,10 @@ module.exports = defineConfig({
     }
   ],
 
+  webServer: {
+    command: 'yarn build:preview && yarn serve:preview',
+    url: 'http://localhost:4173',
+    timeout: 120000,
+    reuseExistingServer: !process.env.CI
+  }
 });

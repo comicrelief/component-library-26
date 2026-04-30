@@ -36,9 +36,9 @@ it('renders correctly', () => {
       position: absolute;
       left: 0;
       top: 0;
-      width: 33% !important;
+      width: 33%!important;
       height: 100%;
-      padding: 0 !important;
+      padding: 0!important;
       box-shadow: none;
       text-indent: -9999px;
       background-color: transparent;
@@ -53,7 +53,6 @@ it('renders correctly', () => {
       left: 0;
       width: 50%;
       height: 100%;
-      -webkit-transition: opacity 0.2s linear;
       transition: opacity 0.2s linear;
       background: linear-gradient(90deg,#FFFFFF,#FFFFFF7a,#FFFFFF00);
     }
@@ -69,8 +68,6 @@ it('renders correctly', () => {
     }
 
     .c0 .carousel button.carousel__next-button:before {
-      -webkit-transform: translate(0,-50%) rotate(-90deg);
-      -ms-transform: translate(0,-50%) rotate(-90deg);
       transform: translate(0,-50%) rotate(-90deg);
     }
 
@@ -81,12 +78,8 @@ it('renders correctly', () => {
     }
 
     .c0 .carousel .richtext-carousel {
-      -webkit-transition: -webkit-transform 0.75s;
-      -webkit-transition: -webkit-transform 0.75s;
       transition: -webkit-transform 0.75s;
       -o-transition: transform 0.75s;
-      -webkit-transition: -webkit-transform 0.75s;
-      -webkit-transition: transform 0.75s;
       transition: transform 0.75s;
       -webkit-transform: 0.75s;
       will-change: transform;
@@ -97,32 +90,21 @@ it('renders correctly', () => {
     }
 
     .c0 .carousel .richtext-carousel .carousel__slide {
-      padding-bottom: 300px !important;
+      padding-bottom: 300px!important;
     }
 
     .c0 .carousel .richtext-carousel .carousel__slide .carousel__inner-slide {
       text-align: center;
-      display: -webkit-inline-box;
-      display: -webkit-inline-flex;
-      display: -ms-inline-flexbox;
       display: inline-flex;
-      -webkit-align-items: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: start;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
       justify-content: flex-start;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
       flex-direction: column;
     }
 
-    @media (min-width:740px) {
+    @media (min-width: 740px) {
       .c0 .carousel button.carousel__back-button,
       .c0 .carousel button.carousel__next-button {
-        width: 33.3% !important;
+        width: 33.3%!important;
       }
 
       .c0 .carousel button.carousel__back-button:after,
@@ -131,85 +113,69 @@ it('renders correctly', () => {
       }
     }
 
-    @media (min-width:740px) {
+    @media (min-width: 740px) {
       .c0 .carousel .richtext-carousel .carousel__slide {
-        padding-bottom: 350px !important;
+        padding-bottom: 350px!important;
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide .carousel__inner-slide > div:first-child {
-        -webkit-transition: -webkit-transform 0.75s ease;
-        -webkit-transition: transform 0.75s ease;
+      .c0 .carousel .richtext-carousel .carousel__slide .carousel__inner-slide >div:first-child {
         transition: transform 0.75s ease;
-        -webkit-transform-origin: center;
-        -ms-transform-origin: center;
         transform-origin: center;
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
         transform: scale(0.8);
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide .carousel__inner-slide > div:first-child:after {
-        -webkit-transition: -webkit-transform 0.75s ease,width 0.75s ease,right 0.75s ease;
-        -webkit-transition: transform 0.75s ease,width 0.75s ease,right 0.75s ease;
+      .c0 .carousel .richtext-carousel .carousel__slide .carousel__inner-slide >div:first-child:after {
         transition: transform 0.75s ease,width 0.75s ease,right 0.75s ease;
         width: 100%;
         right: calc(-100% - 6px);
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
         transform: scale(1);
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible .carousel__inner-slide > div:first-child:after {
+      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible .carousel__inner-slide >div:first-child:after {
         width: 33%;
         right: calc(-33% - 3px);
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
         transform: scale(1);
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible + .carousel__slide--visible .carousel__inner-slide > div:first-child {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
+      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible +.carousel__slide--visible .carousel__inner-slide >div:first-child {
         transform: scale(1);
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible + .carousel__slide--visible .carousel__inner-slide > div:first-child:after {
+      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible +.carousel__slide--visible .carousel__inner-slide >div:first-child:after {
         width: 33%;
         right: calc(-33% + 3px);
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
         transform: scale(0.8);
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible + .carousel__slide--visible + .carousel__slide--visible > div > div:first-child {
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
+      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible +.carousel__slide--visible +.carousel__slide--visible >div>div:first-child {
         transform: scale(0.8);
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible + .carousel__slide--visible + .carousel__slide--visible > div > div:first-child:after {
+      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible +.carousel__slide--visible +.carousel__slide--visible >div>div:first-child:after {
         width: 50%;
         right: calc(-50% - 6px);
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
         transform: scale(1);
       }
     }
 
-    @media (min-width:1024px) {
+    @media (min-width: 1024px) {
       .c0 .carousel .richtext-carousel .carousel__slide {
-        padding-bottom: 350px !important;
+        padding-bottom: 350px!important;
       }
 
-      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible + .carousel__slide--visible + .carousel__slide--visible .carousel__inner-slide > div:first-child:after {
+      .c0 .carousel .richtext-carousel .carousel__slide.carousel__slide--visible +.carousel__slide--visible +.carousel__slide--visible .carousel__inner-slide >div:first-child:after {
         right: calc(-125% - 5px);
         width: 125%;
       }
     }
 
     <div
+      carouselBackgroundColour="white"
       className="c0 CarouselWrapper"
+      desktopHeight={350}
       id="nqIEHjiYE8Yd2A2a5cI3O"
+      mobileHeight={300}
+      tabletHeight={350}
     >
       <div
         className="c1"

@@ -98,7 +98,7 @@ jobs:
 
   publish:
     name: Publish package to npm
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     needs: playwright
     runs-on: ubuntu-latest
     steps:
